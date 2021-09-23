@@ -36,6 +36,10 @@ Config.GracePower = 5
 -- how long grace time lasts in seconds
 Config.GraceTime = 480
 
+Config.AntiSpamTimer = 30
+Config.PleaseWait_1 = "Please wait "
+Config.PleaseWait_2 = " seconds. The connection will start automatically!"
+
 -- on resource start, players can join the queue but will not let them join for __ milliseconds
 -- this will let the queue settle and lets other resources finish initializing
 Config.JoinDelay = 30000
