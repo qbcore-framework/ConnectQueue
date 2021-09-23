@@ -449,6 +449,11 @@ local function playerConnect(name, setKickReason, deferrals)
     local connecting = true
 
     deferrals.defer()
+	
+	for i=Config.AntiSpamTimer,0,-1 do
+		deferrals.update(Config.PleaseWait_1 .. i .. Config.PleaseWait_2)
+		Citizen.Wait(1000)
+    	end
 
     Citizen.CreateThread(function()
         while connecting do
