@@ -451,7 +451,7 @@ local function playerConnect(name, setKickReason, deferrals)
     deferrals.defer()
 	
 	for i=Config.AntiSpamTimer,0,-1 do
-		deferrals.update(Config.PleaseWait_1 .. i .. Config.PleaseWait_2)
+		deferrals.update(string.format(Config.PleaseWait, i))
 		Citizen.Wait(1000)
     	end
 
