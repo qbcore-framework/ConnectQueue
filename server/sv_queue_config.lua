@@ -43,6 +43,8 @@ Config.JoinDelay = 30000
 -- will show how many people have temporary priority in the connection message
 Config.ShowTemp = false
 
+Config.MaxClients = 64
+
 -- simple localization
 Config.Language = {
     joining = "\xF0\x9F\x8E\x89Joining...",
