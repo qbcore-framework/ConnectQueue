@@ -1,7 +1,10 @@
 fx_version 'bodacious'
 game 'common'
 
-server_script "server/sv_queue_config.lua"
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
+    'server/sv_queue_config.lua'
+}
 server_script "connectqueue.lua"
 
 server_script "shared/sh_queue.lua"
