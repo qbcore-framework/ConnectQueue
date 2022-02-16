@@ -449,6 +449,13 @@ local function playerConnect(name, setKickReason, deferrals)
     local connecting = true
 
     deferrals.defer()
+	
+	if Config.AntiSpam then
+		for i=Config.AntiSpamTimer,0,-1 do
+			deferrals.update(string.format(Config.PleaseWait, i))
+			Citizen.Wait(1000)
+		end
+	end
 
     Citizen.CreateThread(function()
         while connecting do
@@ -487,7 +494,7 @@ local function playerConnect(name, setKickReason, deferrals)
 
     if not ids then
         -- prevent joining
-        done(Config.Language.iderr)
+        done(Config.Language.idrr)
         CancelEvent()
         Queue:DebugPrint("Dropped " .. name .. ", couldn't retrieve any of their id's")
         return
